@@ -11,11 +11,12 @@ package main
 import (
     "fmt"
 )
+//定义接口interface
 type Man interface {
     name() string;
     age() int;
 }
-
+//**********************接口实现 1
 type Woman struct {
 }
 
@@ -25,7 +26,7 @@ func (woman Woman) name() string {
 func (woman Woman) age() int {
    return 23;
 }
-
+//*********************接口实现 2
 type Men struct {
 }
 
@@ -37,12 +38,12 @@ func ( men Men) age() int {
 }
 
 func main(){
-    var man Man;
+    var man Man;            //接口变量
 
-    man = new(Woman);
+    man = new(Woman);       //使用women初始化接口
     fmt.Println( man.name());
     fmt.Println( man.age());
-    man = new(Men);
+    man = new(Men);        //使用men初始化接口
     fmt.Println( man.name());
     fmt.Println( man.age());
 }
